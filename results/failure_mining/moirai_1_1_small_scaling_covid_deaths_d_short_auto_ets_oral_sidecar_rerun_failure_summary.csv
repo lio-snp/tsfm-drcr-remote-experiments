@@ -1,0 +1,2 @@
+baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
+auto_ets,covid_deaths/D/short,0.75,0.75,33354636033.37606,0.6958333333333333,4169329505.806323,moirai_1_1_small,8,8,0.0,30,moirai_1_1_small_scaling_covid_deaths_d_short_auto_ets_oral_sidecar_rerun_1783618827

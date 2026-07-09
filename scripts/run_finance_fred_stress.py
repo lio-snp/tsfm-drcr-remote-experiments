@@ -40,6 +40,7 @@ from low_snr_tsfm.metrics import (
     rmse,
     spike_recall,
 )
+from low_snr_tsfm.quantile_artifacts import quantile_row_values, quantile_triplet_from_matrix
 from low_snr_tsfm.stats import benjamini_hochberg, diebold_mariano
 
 
@@ -156,6 +157,17 @@ def quantile_triplet(quantiles: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.
     if q.shape[1] >= 3:
         return q[:, 0], q[:, 1], q[:, 2]
     raise ValueError(f"Quantile output has too few columns: {q.shape}")
+
+
+def timesfm_quantile_levels(quantiles: np.ndarray) -> list[float]:
+    q = np.asarray(quantiles, dtype=float)
+    if q.ndim != 2:
+        raise ValueError(f"Expected TimesFM quantiles with shape horizon x quantile, got {q.shape}")
+    if q.shape[1] >= 10:
+        return [idx / 10.0 for idx in range(q.shape[1])]
+    if q.shape[1] >= 9:
+        return [(idx + 1) / 10.0 for idx in range(q.shape[1])]
+    raise ValueError(f"TimesFM quantile output has too few columns: {q.shape}")
 
 
 def download_fred_csv(series_id: str, cache_dir: Path, refresh: bool) -> Path:
@@ -385,13 +397,16 @@ def main() -> None:
                     prediction_length=args.horizon,
                     quantile_levels=quantile_levels,
                 )
-                q = quantiles[0].detach().cpu().numpy()
+                quantile_matrix = quantiles[0].detach().cpu().numpy()
+                row_quantile_levels = quantile_levels
                 mean_forecast = mean[0].detach().cpu().numpy()
+                q10, q50, q90 = quantile_triplet_from_matrix(quantile_matrix, row_quantile_levels)
             else:
                 point, quantiles = pipeline.forecast(horizon=args.horizon, inputs=[context])
                 mean_forecast = np.asarray(point[0], dtype=float)
-                q10, q50, q90 = quantile_triplet(np.asarray(quantiles[0], dtype=float))
-                q = np.stack([q10, q50, q90], axis=1)
+                quantile_matrix = np.asarray(quantiles[0], dtype=float)
+                row_quantile_levels = timesfm_quantile_levels(quantile_matrix)
+                q10, q50, q90 = quantile_triplet_from_matrix(quantile_matrix, row_quantile_levels)
             model_mae = mae(target, mean_forecast)
             model_mase = mase(target, mean_forecast, context, season_length=1)
             baseline_mase = mase(target, baseline_values, context, season_length=1)
@@ -427,7 +442,7 @@ def main() -> None:
                 "prediction_amplitude_ratio": prediction_amplitude_ratio(target, mean_forecast),
                 "flatness_score": flatness_score(target, mean_forecast),
                 "spike_recall": spike_recall(target, mean_forecast, k=3),
-                "empirical_coverage_90": empirical_coverage(target, q[:, 0], q[:, 2]),
+                "empirical_coverage_90": empirical_coverage(target, q10, q90),
                 "failure_delta_005": int(rer > 1.05),
                 "excess_variance": int(flags.excess_variance),
                 "over_smoothing": int(flags.over_smoothing),
@@ -505,11 +520,12 @@ def main() -> None:
                         "horizon": args.horizon,
                         "actual": float(target[idx]),
                         "forecast_mean": float(mean_forecast[idx]),
-                        "forecast_median": float(q[idx, 1]),
-                        "forecast_q10": float(q[idx, 0]),
-                        "forecast_q50": float(q[idx, 1]),
-                        "forecast_q90": float(q[idx, 2]),
+                        "forecast_median": float(q50[idx]),
+                        "forecast_q10": float(q10[idx]),
+                        "forecast_q50": float(q50[idx]),
+                        "forecast_q90": float(q90[idx]),
                         "baseline_forecast": float(baseline_values[idx]),
+                        **quantile_row_values(quantile_matrix, row_quantile_levels, idx),
                         "source_commit": source_commit,
                         "source_url": FRED_URL.format(series_id=spec.series_id),
                         "model_id": args.model_id,

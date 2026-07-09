@@ -1,0 +1,176 @@
+{
+  "run_id": "timesfm_2_5_finance_fred_finance_fred_stress_oral_sidecar_rerun_1783619484",
+  "source": "FRED public CSV via fred.stlouisfed.org",
+  "backend": "timesfm",
+  "start_date": "2016-01-01",
+  "end_date": "2026-07-04",
+  "model_id": "google/timesfm-2.5-200m-pytorch",
+  "context_length": 256,
+  "horizon": 10,
+  "step": 63,
+  "max_windows_per_series": 4,
+  "window_manifest": "results/aaai_stress/rerun_manifests/timesfm_2_5_finance_fred_finance_fred_stress_windows.csv",
+  "history_context_sidecar": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\raw_forecasts\\timesfm_2_5_finance_fred_finance_fred_stress_oral_sidecar_rerun_history_context.csv",
+  "series": [
+    {
+      "series_id": "SP500",
+      "label": "sp500_return",
+      "status": "ok",
+      "target": "log_return",
+      "n_points": 2508,
+      "first_date": "2016-07-12",
+      "last_date": "2026-07-02",
+      "windows_run": 4,
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=SP500"
+    },
+    {
+      "series_id": "NASDAQCOM",
+      "label": "nasdaq_return",
+      "status": "ok",
+      "target": "log_return",
+      "n_points": 2639,
+      "first_date": "2016-01-05",
+      "last_date": "2026-07-02",
+      "windows_run": 4,
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NASDAQCOM"
+    },
+    {
+      "series_id": "DJIA",
+      "label": "dow_jones_return",
+      "status": "ok",
+      "target": "log_return",
+      "n_points": 2508,
+      "first_date": "2016-07-12",
+      "last_date": "2026-07-02",
+      "windows_run": 4,
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DJIA"
+    },
+    {
+      "series_id": "DEXUSEU",
+      "label": "eur_usd_return",
+      "status": "ok",
+      "target": "log_return",
+      "n_points": 2622,
+      "first_date": "2016-01-05",
+      "last_date": "2026-07-02",
+      "windows_run": 4,
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXUSEU"
+    },
+    {
+      "series_id": "DEXJPUS",
+      "label": "jpy_usd_return",
+      "status": "ok",
+      "target": "log_return",
+      "n_points": 2622,
+      "first_date": "2016-01-05",
+      "last_date": "2026-07-02",
+      "windows_run": 4,
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXJPUS"
+    },
+    {
+      "series_id": "DEXUSUK",
+      "label": "gbp_usd_return",
+      "status": "ok",
+      "target": "log_return",
+      "n_points": 2622,
+      "first_date": "2016-01-05",
+      "last_date": "2026-07-02",
+      "windows_run": 4,
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXUSUK"
+    },
+    {
+      "series_id": "DEXCAUS",
+      "label": "cad_usd_return",
+      "status": "ok",
+      "target": "log_return",
+      "n_points": 2622,
+      "first_date": "2016-01-05",
+      "last_date": "2026-07-02",
+      "windows_run": 4,
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXCAUS"
+    },
+    {
+      "series_id": "DEXCHUS",
+      "label": "cny_usd_return",
+      "status": "ok",
+      "target": "log_return",
+      "n_points": 2622,
+      "first_date": "2016-01-05",
+      "last_date": "2026-07-02",
+      "windows_run": 4,
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXCHUS"
+    },
+    {
+      "series_id": "DCOILWTICO",
+      "label": "wti_oil_return",
+      "status": "ok",
+      "target": "log_return",
+      "n_points": 2624,
+      "first_date": "2016-01-05",
+      "last_date": "2026-07-02",
+      "windows_run": 4,
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILWTICO"
+    },
+    {
+      "series_id": "DHHNGSP",
+      "label": "henry_hub_gas_return",
+      "status": "ok",
+      "target": "log_return",
+      "n_points": 2642,
+      "first_date": "2016-01-04",
+      "last_date": "2026-07-02",
+      "windows_run": 4,
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DHHNGSP"
+    },
+    {
+      "series_id": "DCOILBRENTEU",
+      "label": "brent_oil_return",
+      "status": "ok",
+      "target": "log_return",
+      "n_points": 2664,
+      "first_date": "2016-01-05",
+      "last_date": "2026-07-03",
+      "windows_run": 4,
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU"
+    },
+    {
+      "series_id": "VIXCLS",
+      "label": "vix_log_level",
+      "status": "ok",
+      "target": "log_level",
+      "n_points": 2671,
+      "first_date": "2016-01-04",
+      "last_date": "2026-07-03",
+      "windows_run": 4,
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=VIXCLS"
+    },
+    {
+      "series_id": "OVXCLS",
+      "label": "oil_vol_log_level",
+      "status": "ok",
+      "target": "log_level",
+      "n_points": 2641,
+      "first_date": "2016-01-04",
+      "last_date": "2026-07-02",
+      "windows_run": 4,
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=OVXCLS"
+    },
+    {
+      "series_id": "GVZCLS",
+      "label": "gold_vol_log_level",
+      "status": "ok",
+      "target": "log_level",
+      "n_points": 2641,
+      "first_date": "2016-01-04",
+      "last_date": "2026-07-02",
+      "windows_run": 4,
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=GVZCLS"
+    }
+  ],
+  "limitations": [
+    "small public FRED fallback, not point-in-time equity universe",
+    "daily close/index data only",
+    "not a trading or deployment claim",
+    "limited CPU timesfm seed for finance alignment"
+  ]
+}

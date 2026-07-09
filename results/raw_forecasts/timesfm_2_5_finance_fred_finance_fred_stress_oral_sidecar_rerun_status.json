@@ -1,0 +1,26 @@
+{
+  "status": "ok",
+  "timestamp": 1783619492,
+  "backend": "timesfm",
+  "model_id": "google/timesfm-2.5-200m-pytorch",
+  "start_date": "2016-01-01",
+  "end_date": "2026-07-04",
+  "series_run": 14,
+  "windows_run": 56,
+  "raw_rows": 560,
+  "raw_forecasts": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\raw_forecasts\\timesfm_2_5_finance_fred_finance_fred_stress_oral_sidecar_rerun.csv",
+  "window_metrics": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\window_metrics\\timesfm_2_5_finance_fred_finance_fred_stress_oral_sidecar_rerun_metrics.csv",
+  "window_manifest": "results/aaai_stress/rerun_manifests/timesfm_2_5_finance_fred_finance_fred_stress_windows.csv",
+  "failure_mining": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\failure_mining\\timesfm_2_5_finance_fred_finance_fred_stress_oral_sidecar_rerun_window_failures.csv",
+  "failure_summary": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\failure_mining\\timesfm_2_5_finance_fred_finance_fred_stress_oral_sidecar_rerun_failure_summary.csv",
+  "predictor_features": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\failure_mining\\timesfm_2_5_finance_fred_finance_fred_stress_oral_sidecar_rerun_predictor_features.csv",
+  "dm_fdr": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\statistics\\timesfm_2_5_finance_fred_finance_fred_stress_oral_sidecar_rerun_dm_fdr.csv",
+  "history_context_sidecar": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\raw_forecasts\\timesfm_2_5_finance_fred_finance_fred_stress_oral_sidecar_rerun_history_context.csv",
+  "manifest": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\reproduction\\finance_fred_stress_manifest.json",
+  "limitations": [
+    "small public FRED fallback, not point-in-time equity universe",
+    "daily close/index data only",
+    "not a trading or deployment claim",
+    "limited CPU timesfm seed for finance alignment"
+  ]
+}

@@ -7,6 +7,7 @@ import argparse
 import csv
 import shlex
 import subprocess
+import sys
 import time
 from pathlib import Path
 
@@ -16,6 +17,19 @@ MANIFEST = OUT / "oral_rerun_command_manifest.csv"
 STATUS_OUT = OUT / "oral_rerun_execution_status.csv"
 LOG_DIR = OUT / "oral_rerun_logs"
 RAW_DIR = ROOT / "results" / "raw_forecasts"
+
+
+def raise_csv_field_limit() -> None:
+    limit = sys.maxsize
+    while True:
+        try:
+            csv.field_size_limit(limit)
+            return
+        except OverflowError:
+            limit //= 10
+
+
+raise_csv_field_limit()
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:

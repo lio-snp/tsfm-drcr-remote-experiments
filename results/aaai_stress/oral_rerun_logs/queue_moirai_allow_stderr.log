@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "E:\DRCR-helper\tsfm-drcr-remote-experiments\scripts\run_oral_rerun_queue.py", line 270, in <module>
+    main()
+  File "E:\DRCR-helper\tsfm-drcr-remote-experiments\scripts\run_oral_rerun_queue.py", line 248, in main
+    result = run_one(
+             ^^^^^^^^
+  File "E:\DRCR-helper\tsfm-drcr-remote-experiments\scripts\run_oral_rerun_queue.py", line 196, in run_one
+    execution_status = "ok" if returncode == 0 and already_complete(command) else "failed_or_missing_artifacts"
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DRCR-helper\tsfm-drcr-remote-experiments\scripts\run_oral_rerun_queue.py", line 119, in already_complete
+    status = artifact_status(command)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DRCR-helper\tsfm-drcr-remote-experiments\scripts\run_oral_rerun_queue.py", line 105, in artifact_status
+    sidecar_rows = count_rows(sidecar_path)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DRCR-helper\tsfm-drcr-remote-experiments\scripts\run_oral_rerun_queue.py", line 96, in count_rows
+    return sum(1 for _ in csv.DictReader(handle))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DRCR-helper\tsfm-drcr-remote-experiments\scripts\run_oral_rerun_queue.py", line 96, in <genexpr>
+    return sum(1 for _ in csv.DictReader(handle))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\31359\anaconda3\Lib\csv.py", line 116, in __next__
+    row = next(self.reader)
+          ^^^^^^^^^^^^^^^^^
+_csv.Error: field larger than field limit (131072)

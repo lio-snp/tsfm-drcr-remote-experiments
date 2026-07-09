@@ -1,0 +1,2 @@
+baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
+auto_ets,covid_deaths/D/short,0.375,0.75,1546359062.1948242,0.6,193294884.10753748,timesfm_2_5_m8,8,8,0.125,30,timesfm_2_5_m8_covid_deaths_short_auto_ets_oral_sidecar_rerun_1783619310

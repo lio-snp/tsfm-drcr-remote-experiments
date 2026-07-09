@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import csv
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,6 +17,19 @@ AUDIT_OUT = OUT / "remote_q9_rerun_completion_audit.csv"
 DOC_OUT = DOCS / "remote_q9_rerun_completion_audit.md"
 
 Q9_COLUMNS = [f"forecast_q{level}" for level in range(10, 100, 10)]
+
+
+def raise_csv_field_limit() -> None:
+    limit = sys.maxsize
+    while True:
+        try:
+            csv.field_size_limit(limit)
+            return
+        except OverflowError:
+            limit //= 10
+
+
+raise_csv_field_limit()
 
 
 def read_csv_optional(path: Path) -> list[dict[str, str]]:

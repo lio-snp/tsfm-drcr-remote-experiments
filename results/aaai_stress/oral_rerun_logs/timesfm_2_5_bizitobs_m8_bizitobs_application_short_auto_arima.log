@@ -1,0 +1,38 @@
+$ '.\.venv\Scripts\python.exe' scripts/run_timesfm_gift_eval_raw.py --dataset-name bizitobs_application --data-path data/gift-eval/bizitobs_application --term short --model-id google/timesfm-2.5-200m-pytorch --model-name timesfm_2_5_bizitobs_m8 --baseline-mode auto_arima --window-manifest results/aaai_stress/rerun_manifests/timesfm_2_5_bizitobs_m8_bizitobs_application_short_auto_arima_windows.csv --output-slug timesfm_2_5_bizitobs_m8_bizitobs_application_short_auto_arima_oral_sidecar_rerun --export-history-sidecar --context-cap 128 --skip-memory-preflight --min-available-ram-gb 0.2
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{
+  "status": "ok",
+  "timestamp": 1783619258,
+  "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\data\\gift-eval\\bizitobs_application",
+  "dataset": "bizitobs_application/10S/short",
+  "model_id": "google/timesfm-2.5-200m-pytorch",
+  "prediction_length": 60,
+  "gift_eval_windows": 15,
+  "windows_run": 2,
+  "series_run": 2,
+  "quantile_levels": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "window_manifest": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\aaai_stress\\rerun_manifests\\timesfm_2_5_bizitobs_m8_bizitobs_application_short_auto_arima_windows.csv",
+  "manifest_requested_windows": 2,
+  "manifest_matched_windows": 2,
+  "raw_forecasts": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\raw_forecasts\\timesfm_2_5_bizitobs_m8_bizitobs_application_short_auto_arima_oral_sidecar_rerun.csv",
+  "history_context_sidecar": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\raw_forecasts\\timesfm_2_5_bizitobs_m8_bizitobs_application_short_auto_arima_oral_sidecar_rerun_history_context.csv",
+  "window_metrics": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\window_metrics\\timesfm_2_5_bizitobs_m8_bizitobs_application_short_auto_arima_oral_sidecar_rerun_metrics.csv",
+  "failure_mining": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\failure_mining\\timesfm_2_5_bizitobs_m8_bizitobs_application_short_auto_arima_oral_sidecar_rerun_window_failures.csv",
+  "failure_summary": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\failure_mining\\timesfm_2_5_bizitobs_m8_bizitobs_application_short_auto_arima_oral_sidecar_rerun_failure_summary.csv",
+  "limitations": [
+    "limited-series CPU rerun",
+    "TimesFM local memory-gated path"
+  ]
+}

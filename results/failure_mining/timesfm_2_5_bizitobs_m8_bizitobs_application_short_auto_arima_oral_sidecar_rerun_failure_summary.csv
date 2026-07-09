@@ -1,0 +1,2 @@
+baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
+auto_arima,bizitobs_application/10S/short,0.0,0.5,1.3499496560488715,0.95,0.7561330392518835,timesfm_2_5_bizitobs_m8,2,2,0.5,60,timesfm_2_5_bizitobs_m8_bizitobs_application_short_auto_arima_oral_sidecar_rerun_1783619256

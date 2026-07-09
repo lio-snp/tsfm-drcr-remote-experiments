@@ -1,0 +1,2 @@
+baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
+seasonal_naive,loop_seattle/H/short,0.0,0.0,0.47854171651513566,0.6640625,0.35217086384497065,moirai2_loop_m8,8,8,0.0,48,moirai2_loop_m8_loop_seattle_short_seasonal_naive_oral_sidecar_rerun_1783618667

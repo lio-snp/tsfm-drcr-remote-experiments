@@ -1,0 +1,2 @@
+baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
+seasonal_naive,solar/10T/short,0.0,0.375,2.9171537534222893,0.6354166666666666,1.214824400063346,timesfm_2_5_solar_m8,8,8,0.125,48,timesfm_2_5_solar_m8_solar_short_seasonal_naive_oral_sidecar_rerun_1783619319

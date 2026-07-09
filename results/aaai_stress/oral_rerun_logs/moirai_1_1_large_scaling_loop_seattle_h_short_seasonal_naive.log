@@ -1,0 +1,38 @@
+$ '.\.venv\Scripts\python.exe' scripts/run_moirai_gift_eval_raw.py --dataset-name loop_seattle --data-path data/gift-eval/loop_seattle/H --term short --model-id Salesforce/moirai-1.1-R-large --model-name moirai_1_1_large --model-family moirai1 --baseline-mode seasonal_naive --window-manifest results/aaai_stress/rerun_manifests/moirai_1_1_large_scaling_loop_seattle_h_short_seasonal_naive_windows.csv --output-slug moirai_1_1_large_scaling_loop_seattle_h_short_seasonal_naive_oral_sidecar_rerun --export-history-sidecar --context-cap 1680 --num-samples 50 --baseline-context-cap 1680 --baseline-season-length 48 --skip-memory-preflight --min-available-ram-gb 0.2
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{
+  "status": "ok",
+  "timestamp": 1783618988,
+  "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\data\\gift-eval\\loop_seattle\\H",
+  "dataset": "loop_seattle/H/short",
+  "model_id": "Salesforce/moirai-1.1-R-large",
+  "prediction_length": 48,
+  "gift_eval_windows": 19,
+  "windows_run": 8,
+  "series_run": 8,
+  "model_family": "moirai1",
+  "patch_size": "auto",
+  "num_samples": 50,
+  "seed": 7,
+  "window_manifest": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\aaai_stress\\rerun_manifests\\moirai_1_1_large_scaling_loop_seattle_h_short_seasonal_naive_windows.csv",
+  "manifest_requested_windows": 8,
+  "manifest_matched_windows": 8,
+  "raw_forecasts": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\raw_forecasts\\moirai_1_1_large_scaling_loop_seattle_h_short_seasonal_naive_oral_sidecar_rerun.csv",
+  "history_context_sidecar": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\raw_forecasts\\moirai_1_1_large_scaling_loop_seattle_h_short_seasonal_naive_oral_sidecar_rerun_history_context.csv",
+  "window_metrics": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\window_metrics\\moirai_1_1_large_scaling_loop_seattle_h_short_seasonal_naive_oral_sidecar_rerun_metrics.csv",
+  "failure_mining": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\failure_mining\\moirai_1_1_large_scaling_loop_seattle_h_short_seasonal_naive_oral_sidecar_rerun_window_failures.csv",
+  "failure_summary": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments\\results\\failure_mining\\moirai_1_1_large_scaling_loop_seattle_h_short_seasonal_naive_oral_sidecar_rerun_failure_summary.csv",
+  "quantile_levels": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "sample_paths_persisted": false
+}
