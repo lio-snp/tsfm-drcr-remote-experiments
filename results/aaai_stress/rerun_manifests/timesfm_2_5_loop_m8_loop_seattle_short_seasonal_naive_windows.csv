@@ -1,0 +1,9 @@
+source,dataset,dataset_name,term,series_id,window_index,split
+timesfm_2_5_loop_m8_loop_seattle_short_seasonal_naive,LOOP_SEATTLE/H/short,LOOP_SEATTLE,short,0,0,test
+timesfm_2_5_loop_m8_loop_seattle_short_seasonal_naive,LOOP_SEATTLE/H/short,LOOP_SEATTLE,short,1,0,test
+timesfm_2_5_loop_m8_loop_seattle_short_seasonal_naive,LOOP_SEATTLE/H/short,LOOP_SEATTLE,short,2,0,calibration
+timesfm_2_5_loop_m8_loop_seattle_short_seasonal_naive,LOOP_SEATTLE/H/short,LOOP_SEATTLE,short,3,0,test
+timesfm_2_5_loop_m8_loop_seattle_short_seasonal_naive,LOOP_SEATTLE/H/short,LOOP_SEATTLE,short,4,0,test
+timesfm_2_5_loop_m8_loop_seattle_short_seasonal_naive,LOOP_SEATTLE/H/short,LOOP_SEATTLE,short,5,0,test
+timesfm_2_5_loop_m8_loop_seattle_short_seasonal_naive,LOOP_SEATTLE/H/short,LOOP_SEATTLE,short,6,0,calibration
+timesfm_2_5_loop_m8_loop_seattle_short_seasonal_naive,LOOP_SEATTLE/H/short,LOOP_SEATTLE,short,7,0,test

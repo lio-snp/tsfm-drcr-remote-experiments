@@ -1,0 +1,9 @@
+source,dataset,dataset_name,term,series_id,window_index,split
+timesfm_2_5_m8_covid_deaths_short_auto_ets,covid_deaths/D/short,covid_deaths,short,T1,0,test
+timesfm_2_5_m8_covid_deaths_short_auto_ets,covid_deaths/D/short,covid_deaths,short,T2,0,calibration
+timesfm_2_5_m8_covid_deaths_short_auto_ets,covid_deaths/D/short,covid_deaths,short,T3,0,test
+timesfm_2_5_m8_covid_deaths_short_auto_ets,covid_deaths/D/short,covid_deaths,short,T4,0,test
+timesfm_2_5_m8_covid_deaths_short_auto_ets,covid_deaths/D/short,covid_deaths,short,T5,0,test
+timesfm_2_5_m8_covid_deaths_short_auto_ets,covid_deaths/D/short,covid_deaths,short,T6,0,test
+timesfm_2_5_m8_covid_deaths_short_auto_ets,covid_deaths/D/short,covid_deaths,short,T7,0,calibration
+timesfm_2_5_m8_covid_deaths_short_auto_ets,covid_deaths/D/short,covid_deaths,short,T8,0,test

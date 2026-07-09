@@ -1,0 +1,85 @@
+# Candidate policy set for DRCR final-main experiments.
+# Status: frozen for current final-main artifact rerun, created 2026-07-08.
+# Rule: do not add/remove/retune candidates after freezing without invalidating the no-test-tuning claim.
+
+protocol_id: drcr_final_main_candidate_set_frozen_2026_07_08
+selected_current: drcr_expert_pull_1.25_cap_1.10
+frontier_probe_current: drcr_width_veto_expert_pull_1.50_cap_1.10
+
+candidate_groups:
+  anchors:
+    - id: native_tsfm
+      role: deployed_model_anchor
+      description: Keep the original TSFM forecast and intervals.
+    - id: classical_deterministic
+      role: naive_classical_fallback
+      description: Deterministic classical point forecast; useful but not a fair probabilistic baseline by itself.
+    - id: classical_residual_calibrated
+      role: probabilistic_classical_baseline
+      description: Classical point forecast plus residual-calibrated interval.
+
+  objective_baselines:
+    - id: global_blend
+      role: objective_baseline
+      description: Fixed global mixture of native TSFM and classical reference.
+      status: required_not_yet_final
+    - id: local_structure_threshold_gate
+      role: objective_baseline
+      description: Simple hand threshold on local-structure score.
+      status: required_not_yet_final
+    - id: conformal_width_threshold_gate
+      role: objective_baseline
+      description: Simple hand threshold on conformal width or conformal tax.
+      status: required_not_yet_final
+    - id: oracle_selector
+      role: upper_bound
+      description: Per-window best of available actions, reported only as an upper bound.
+      status: required_not_yet_final
+    - id: no_risk_screen_repair
+      role: ablation
+      description: Applies repair without calibration risk screen.
+      status: required_not_yet_final
+    - id: single_risk_repair
+      role: ablation
+      description: Uses only one risk constraint to show why dual/tri-risk matters.
+      status: required_not_yet_final
+    - id: coverage_only_repair
+      role: ablation
+      description: Optimizes or screens only interval coverage.
+      status: required_not_yet_final
+    - id: harm_only_gate
+      role: ablation
+      description: Screens only WQL harm without undercoverage/protected risks.
+      status: required_not_yet_final
+
+  drcr_variants:
+    - id: drcr_full
+      role: unsafe_full_repair_ablation
+      description: Full point and interval repair; expected to reveal harm source.
+    - id: drcr_point
+      role: component_ablation
+      description: Point repair only.
+    - id: drcr_cap_1.10
+      role: conservative_drcr
+      cap: 1.10
+      description: Cap-limited repair.
+    - id: drcr_expert_pull_1.25_cap_1.10
+      role: current_selected_method
+      expert_pull: 1.25
+      cap: 1.10
+      description: Calibration-selected expert-pull repair with cap.
+    - id: drcr_width_veto_expert_pull_1.50_cap_1.10
+      role: frontier_probe
+      expert_pull: 1.50
+      cap: 1.10
+      description: Strong test probe; must not become final unless re-selected by frozen calibration.
+
+tie_breaker_aggressiveness_order:
+  - native_tsfm
+  - drcr_point
+  - drcr_cap_1.10
+  - drcr_expert_pull_1.25_cap_1.10
+  - drcr_width_veto_expert_pull_1.50_cap_1.10
+  - drcr_full
+
+fallback_policy: native_tsfm

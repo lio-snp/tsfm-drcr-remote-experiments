@@ -1,0 +1,33 @@
+{
+  "method_name": "Conformal Policy Repair",
+  "method_id": "cpr_ltt_v1",
+  "risk": {
+    "primary_role": "positive_control",
+    "tau_pc_rer_delta": 0.125,
+    "alpha_pc_tail_harm": 0.1,
+    "delta": 0.1,
+    "correction": "holm",
+    "weak_positive_control_p90_budget": 0.35
+  },
+  "utility": {
+    "primary": "calibration_failure_rate_reduction",
+    "tie_breaker": "lower_gate_rate"
+  },
+  "candidate_grid": {
+    "global_blend_weights": [0.0],
+    "conflict_only": {
+      "conflict_thresholds": [],
+      "weights": []
+    },
+    "local_structure_cpr": {
+      "min_active_factors": [2],
+      "base_weights": [0.25, 0.5, 0.6],
+      "factor_steps": [0.125, 0.25, 0.5],
+      "max_weights": [1.0],
+      "conflict_thresholds": [0.25, 0.4],
+      "shield_caps": [0.125],
+      "hcr_thresholds": [0.3],
+      "trend_thresholds": [0.4]
+    }
+  }
+}

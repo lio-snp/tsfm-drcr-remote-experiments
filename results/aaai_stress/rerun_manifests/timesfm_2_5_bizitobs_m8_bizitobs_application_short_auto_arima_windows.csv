@@ -1,0 +1,3 @@
+source,dataset,dataset_name,term,series_id,window_index,split
+timesfm_2_5_bizitobs_m8_bizitobs_application_short_auto_arima,bizitobs_application/10S/short,bizitobs_application,short,Robot-Shop_dim0,0,test
+timesfm_2_5_bizitobs_m8_bizitobs_application_short_auto_arima,bizitobs_application/10S/short,bizitobs_application,short,Robot-Shop_dim1,0,test

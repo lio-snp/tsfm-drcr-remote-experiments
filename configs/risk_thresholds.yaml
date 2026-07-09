@@ -1,0 +1,65 @@
+# Risk thresholds for DRCR final-main experiments.
+# Status: frozen for current final-main artifact rerun, created 2026-07-08.
+
+protocol_id: drcr_final_main_risk_thresholds_frozen_2026_07_08
+
+primary_metric:
+  id: wql_rer
+  definition: WQL(method) / WQL(reference_baseline)
+  lower_is_better: true
+  full_grid_required_for_headline: true
+  proxy_label_if_q3_only: WQL-proxy-RER
+
+harm_margin:
+  epsilon_harm: 0.05
+  definition: candidate_wql > native_wql * (1 + epsilon_harm)
+
+risk_caps:
+  wql_harm_rate: 0.20
+  protected_wql_harm_rate: 0.20
+  undercoverage_harm_rate: 0.20
+
+protected_groups:
+  - finance_fred_stress
+  - stress_targets
+  - positive_controls
+  - structured_seasonal_controls
+  - tsfm_win_windows
+  - high_native_coverage_windows
+
+failure_groups:
+  - q9_full_grid_failure
+  - low_local_structure
+  - sparse_count_zero_inflated
+  - short_context_high_horizon_context_ratio
+  - burst_decay_changepoint_spike
+  - high_noise_high_cv_heavy_tail
+  - denominator_fragile
+
+utility:
+  q9_gain_weight: 1.0
+  wql_harm_lambda: 1.0
+  protected_harm_lambda: 1.0
+  undercoverage_harm_lambda: 1.0
+  intervention_cost_lambda: 0.2
+  utility_tie_eps: 0.005
+  tie_breaker: least_aggressive_valid_candidate
+
+coverage:
+  central_interval: q10_q90
+  nominal_coverage: 0.80
+  absolute_coverage_claim_allowed: false
+  wording: undercoverage_noninferiority_screen
+
+denominator_sensitivity:
+  clipped_wql_rer_caps:
+    - 5.0
+    - 10.0
+    - 20.0
+  default_cap_for_main_report: 10.0
+
+formal_claim:
+  current_mode: ltt_crc_inspired_empirical_risk_screen
+  distribution_free_finite_sample_claim_allowed: false
+  upgrade_requires_pvalue_table: true
+  correction_if_upgraded: holm_or_bonferroni

@@ -1,0 +1,13 @@
+family,dataset,role,evidence_tier,calibration_windows,test_windows,total_windows,needs_q9_fullgrid_rerun,small_non_chronos_slice,needs_history_context_export
+chronos,covid_deaths/D/short,failure_target,q9_fullgrid,137,119,256,0,0,0
+chronos,solar/10T/short,positive_control,q9_fullgrid,135,121,256,0,0,0
+moirai,LOOP_SEATTLE/H/short,positive_control,q3_interval_proxy,4,4,8,1,1,0
+moirai,covid_deaths/D/short,failure_target,q3_interval_proxy,12,12,24,1,1,0
+moirai,covid_deaths/D/short,failure_target,q9_fullgrid,38,38,76,0,0,0
+moirai,loop_seattle/H/short,positive_control,q3_interval_proxy,15,9,24,1,1,0
+moirai,solar/10T/short,positive_control,q9_fullgrid,42,38,80,0,0,0
+timesfm,FRED finance stress seed,stress_target,q3_interval_proxy,28,28,56,1,1,0
+timesfm,LOOP_SEATTLE/H/short,positive_control,q3_interval_proxy,19,21,40,1,1,0
+timesfm,bizitobs_application/10S/short,stress_target,q3_interval_proxy,14,18,32,1,1,0
+timesfm,covid_deaths/D/short,failure_target,q3_interval_proxy,103,113,216,1,0,0
+timesfm,solar/10T/short,positive_control,q3_interval_proxy,1,7,8,1,1,0

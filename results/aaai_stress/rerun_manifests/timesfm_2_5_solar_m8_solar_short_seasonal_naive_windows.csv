@@ -1,0 +1,9 @@
+source,dataset,dataset_name,term,series_id,window_index,split
+timesfm_2_5_solar_m8_solar_short_seasonal_naive,solar/10T/short,solar,short,item_0,0,calibration
+timesfm_2_5_solar_m8_solar_short_seasonal_naive,solar/10T/short,solar,short,item_1,0,test
+timesfm_2_5_solar_m8_solar_short_seasonal_naive,solar/10T/short,solar,short,item_2,0,test
+timesfm_2_5_solar_m8_solar_short_seasonal_naive,solar/10T/short,solar,short,item_3,0,test
+timesfm_2_5_solar_m8_solar_short_seasonal_naive,solar/10T/short,solar,short,item_4,0,test
+timesfm_2_5_solar_m8_solar_short_seasonal_naive,solar/10T/short,solar,short,item_5,0,test
+timesfm_2_5_solar_m8_solar_short_seasonal_naive,solar/10T/short,solar,short,item_6,0,test
+timesfm_2_5_solar_m8_solar_short_seasonal_naive,solar/10T/short,solar,short,item_7,0,test

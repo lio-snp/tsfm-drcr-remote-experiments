@@ -1,0 +1,92 @@
+{
+  "protocol_id": "drcr_smooth_v1_frozen_2026_07_06",
+  "method_name": "Dual-Risk Conformal Repair Smooth",
+  "method_short_name": "DRCR-Smooth",
+  "freeze_date": "2026-07-06",
+  "freeze_status": "frozen",
+  "purpose": "Freeze the DRCR-Smooth candidate class before expanding Moirai, TimesFM, and domain evidence. New evidence must apply this protocol without adding, removing, or retuning candidates.",
+  "split": {
+    "split_protocol": "source_stratified_hash",
+    "split_id": "hash0_calib_hash1_test",
+    "calibration_rule": "source-stratified deterministic hash split; hash bucket 0 is calibration and hash bucket 1 is test"
+  },
+  "risk_control": {
+    "undercoverage_alpha": 0.18,
+    "wql_harm_alpha": 0.35,
+    "total_delta": 0.10,
+    "delta_per_risk": 0.05,
+    "wql_harm_margin": 0.05,
+    "correction": "holm",
+    "undercoverage_risk": "max(0, nominal_q10_q90_coverage - empirical_q10_q90_coverage)",
+    "wql_noninferiority_harm": "1[repair_wql_rer > model_wql_rer + 0.05]"
+  },
+  "utility": {
+    "undercoverage_lambda": 1.0,
+    "wql_harm_lambda": 0.2,
+    "objective": "-median_wql_rer - undercoverage_lambda * mean_undercoverage_risk - wql_harm_lambda * wql_harm_rate"
+  },
+  "selection": {
+    "utility_tie_eps": 0.005,
+    "tie_rule": "Among candidates passing both LTT screens and within eps of the best utility, prefer smooth_sigmoid heads, then other diagnostic heads, then fixed heads.",
+    "fallback_rule": "If no candidate passes both LTT screens, choose the candidate with minimum joint normalized calibration risk and report fallback_min_joint_calibration_risk."
+  },
+  "candidate_aliases": {
+    "balanced": "balanced_f1.00_s2.00",
+    "previous_step": "collapse_floor_t0.10_f0.95_c1.00_s2.00",
+    "smooth": "smooth_sigmoid_l0.906_h1.00_t0.10_p0.05"
+  },
+  "selected_candidate_id": "smooth_sigmoid_l0.906_h1.00_t0.10_p0.05",
+  "candidate_class": {
+    "status": "frozen",
+    "candidates": [
+      {
+        "candidate_id": "balanced_f1.00_s2.00",
+        "candidate_type": "fixed",
+        "failure_scale": 1.0,
+        "structured_scale": 2.0,
+        "description": "balanced fixed failure head"
+      },
+      {
+        "candidate_id": "safe_f1.25_s2.00",
+        "candidate_type": "fixed",
+        "failure_scale": 1.25,
+        "structured_scale": 2.0,
+        "description": "coverage anchor fixed head"
+      },
+      {
+        "candidate_id": "conservative_f1.50_s2.00",
+        "candidate_type": "fixed",
+        "failure_scale": 1.5,
+        "structured_scale": 2.0,
+        "description": "conservative coverage anchor fixed head"
+      },
+      {
+        "candidate_id": "collapse_floor_t0.10_f0.95_c1.00_s2.00",
+        "candidate_type": "step",
+        "failure_scale": 0.95,
+        "structured_scale": 2.0,
+        "width_ratio_threshold": 0.10,
+        "collapse_scale": 1.00,
+        "description": "previous hard-threshold collapse-floor head"
+      },
+      {
+        "candidate_id": "smooth_sigmoid_l0.906_h1.00_t0.10_p0.05",
+        "candidate_type": "smooth_sigmoid",
+        "low_scale": 0.906,
+        "high_scale": 1.00,
+        "width_ratio_threshold": 0.10,
+        "temperature": 0.05,
+        "structured_scale": 2.0,
+        "description": "continuous width-ratio score-to-scale head"
+      }
+    ]
+  },
+  "bootstrap": {
+    "n_bootstrap": 4000,
+    "seed": 20260705
+  },
+  "evidence_policy": {
+    "allowed_after_freeze": "Apply the frozen candidate class and selected candidate to new evidence slices; do not tune candidate parameters on expansion slices.",
+    "timesfm_note": "TimesFM expansion can contribute full probabilistic DRCR evidence only when full quantile-grid or calibrated quantile artifacts are available; q10/q50/q90-only artifacts must be reported separately as interval-head readiness evidence."
+  }
+}
