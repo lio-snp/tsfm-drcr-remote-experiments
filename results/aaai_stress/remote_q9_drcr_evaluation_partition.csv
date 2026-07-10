@@ -1,0 +1,6 @@
+scope,definition,roles,sources,windows,calibration_windows,test_windows,reporting_role,status
+overall,all P0 replacement sources,all,17,408,196,212,primary_deployment_endpoint,pending_frozen_drcr_refresh
+failure_target,pre-specified failure-target sources,failure_target,7,240,115,125,severe_failure_repair,pending_frozen_drcr_refresh
+non_failure_complement,all P0 sources not labeled failure_target,positive_control;stress_target,10,168,81,87,protected_window_safety,pending_frozen_drcr_refresh
+positive_control,pre-specified positive-control sources,positive_control,7,80,39,41,stable_case_preservation,pending_frozen_drcr_refresh
+stress_target,pre-specified non-failure stress sources,stress_target,3,88,42,46,stress_generalization,pending_frozen_drcr_refresh

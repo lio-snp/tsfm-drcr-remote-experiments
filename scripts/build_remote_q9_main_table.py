@@ -520,6 +520,7 @@ def build_doc(rows: list[dict[str, str]]) -> str:
             "- `OracleBestSimple` in the FRED finance row was selected by minimizing error on each target window. It is an oracle stress comparator, not a deployable or validation-selected baseline.",
             "- Small rows, especially the two-series BizITObs m8 slice, have low inferential power even when effect sizes look large.",
             "- This is a remote-rerun evidence table, not a direct edit to final paper tables. The lead machine must ingest the `_oral_sidecar_rerun` slugs and rebuild the locked final-main inventory before quoting final-paper aggregates.",
+            "- The required all-window DRCR endpoint and its mutually exclusive failure/non-failure decomposition are specified in `docs/remote_q9_drcr_repair_evaluation_addendum.md`.",
             "",
             f"Machine-readable table: `{CSV_OUT.relative_to(ROOT).as_posix()}`.",
             "",
