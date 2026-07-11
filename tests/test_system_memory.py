@@ -1,7 +1,12 @@
 import unittest
+from types import SimpleNamespace
 
 import context  # noqa: F401
-from low_snr_tsfm.system_memory import parse_vm_stat_available_gb
+from low_snr_tsfm.system_memory import (
+    parse_vm_stat_available_gb,
+    windows_available_ram_gb,
+    windows_commit_fraction,
+)
 
 
 class SystemMemoryTests(unittest.TestCase):
@@ -24,6 +29,20 @@ Pages speculative:                         0.
 """
         expected = 2048 * 4096 / (1024**3)
         self.assertAlmostEqual(parse_vm_stat_available_gb(output), expected)
+
+    def test_windows_memory_conversions(self):
+        gib = 1024**3
+        status = SimpleNamespace(
+            ullAvailPhys=18 * gib,
+            ullTotalPageFile=32 * gib,
+            ullAvailPageFile=24 * gib,
+        )
+        self.assertEqual(windows_available_ram_gb(status), 18.0)
+        self.assertEqual(windows_commit_fraction(status), 0.25)
+
+    def test_windows_commit_fraction_handles_missing_limit(self):
+        status = SimpleNamespace(ullTotalPageFile=0, ullAvailPageFile=0)
+        self.assertIsNone(windows_commit_fraction(status))
 
 
 if __name__ == "__main__":

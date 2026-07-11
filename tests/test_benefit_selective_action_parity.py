@@ -11,7 +11,13 @@ from low_snr_tsfm.benefit_selective import frozen_action_grids, pre_origin_featu
 
 
 ROOT = Path(__file__).resolve().parents[1]
-csv.field_size_limit(sys.maxsize)
+csv_limit = sys.maxsize
+while True:
+    try:
+        csv.field_size_limit(csv_limit)
+        break
+    except OverflowError:
+        csv_limit //= 10
 
 
 class BenefitSelectiveActionParityTests(unittest.TestCase):

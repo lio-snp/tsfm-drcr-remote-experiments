@@ -19,7 +19,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from low_snr_tsfm.system_memory import available_ram_gb
+from low_snr_tsfm.system_memory import available_ram_gb, windows_commit_fraction
 
 
 JOBS = ROOT / "results" / "aaai_stress" / "benefit_selective_external_execution_jobs.csv"
@@ -29,6 +29,8 @@ MIN_RAM_GB = {"chronos": 1.5, "moirai": 2.0, "timesfm": 1.56}
 
 
 def swap_fraction() -> float | None:
+    if sys.platform == "win32":
+        return windows_commit_fraction()
     if sys.platform != "darwin":
         return None
     output = subprocess.check_output(["sysctl", "vm.swapusage"], text=True)
@@ -98,8 +100,19 @@ def resolve_data_path(job: dict[str, str]) -> Path | None:
     return None
 
 
+def split_job_command(raw_command: str) -> list[str]:
+    command = shlex.split(raw_command)
+    if sys.platform != "win32" or not command:
+        return command
+    executable = command[0].replace("\\", "/")
+    match = re.fullmatch(r"(?P<venv>\.venv[^/]*)/bin/python(?:3)?", executable)
+    if match:
+        command[0] = str(ROOT / match.group("venv") / "Scripts" / "python.exe")
+    return command
+
+
 def command_with_data_path(job: dict[str, str], data_path: Path) -> list[str]:
-    command = shlex.split(job["command"])
+    command = split_job_command(job["command"])
     index = command.index("--data-path") + 1
     command[index] = str(data_path.relative_to(ROOT))
     return command
@@ -181,7 +194,7 @@ def main() -> None:
                 write_status_rows(statuses)
                 break
             download_log = LOG_DIR / f"{job_id}_download.log"
-            code, detail = run_logged(shlex.split(job["download_command"]), download_log, args.timeout_seconds)
+            code, detail = run_logged(split_job_command(job["download_command"]), download_log, args.timeout_seconds)
             data_path = resolve_data_path(job)
             if code != 0 or data_path is None:
                 statuses[job_id] = {
