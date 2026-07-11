@@ -7,6 +7,7 @@ from low_snr_tsfm.baselines import (
     linear_ar_forecast,
     mean_forecast,
     naive_forecast,
+    rolling_origin_select_baseline,
     seasonal_naive_forecast,
     zero_forecast,
 )
@@ -36,6 +37,23 @@ class BaselineMetricTests(unittest.TestCase):
         pred = linear_ar_forecast(context, horizon=7, lags=5)
         self.assertEqual(pred.shape, (7,))
         self.assertTrue(np.isfinite(pred).all())
+
+    def test_rolling_origin_selector_uses_context_only(self):
+        context = np.tile(np.array([1.0, 4.0]), 12)
+        candidates = {
+            "naive": lambda values, horizon: naive_forecast(values, horizon),
+            "seasonal": lambda values, horizon: seasonal_naive_forecast(values, horizon, 2),
+        }
+        selected = rolling_origin_select_baseline(
+            context,
+            horizon=4,
+            forecasters=candidates,
+            validation_horizon=2,
+            n_folds=3,
+        )
+        self.assertEqual(selected.name, "seasonal")
+        self.assertEqual(selected.folds_used, 3)
+        np.testing.assert_allclose(selected.values, [1.0, 4.0, 1.0, 4.0])
 
     def test_accuracy_metrics(self):
         y = np.array([1.0, 2.0, 3.0])

@@ -1,4 +1,59 @@
-# TSFM DRCR Remote q9 Rerun Handoff
+# TSFM DRCR Remote Experiment Handoff
+
+## Current Locked Task: External Benefit-Selective DRCR Confirmation
+
+The earlier 17-source q9 refresh is complete. The active task is now the frozen
+whole-domain external confirmation for Benefit-Selective DRCR:
+
+- 14 previously unused dataset/frequency/term domains;
+- Chronos-Bolt small, Moirai-1.1 small, and TimesFM 2.5;
+- 16 series and one forecast origin per model-domain source;
+- 42 strictly serial jobs and 672 source-specific windows;
+- common q10-q90 grid and a context-only rolling classical reference;
+- no external labels, retuning, or candidate search.
+
+The scientific protocol, jobs, evaluator, development calibration inputs, and
+28-file SHA256 contract are already frozen. Do not edit a hash-locked file. A
+changed file causes the final evaluator to fail closed.
+
+Validate the handoff before model execution:
+
+```bash
+bash scripts/critic_benefit_selective_external_protocol.sh
+bash scripts/critic_benefit_selective_external_execution_pack.sh
+bash scripts/critic_benefit_selective_external_evaluator.sh
+PYTHONPATH=src python3 scripts/evaluate_benefit_selective_external.py --preflight-only
+```
+
+Before running, the preflight must report `0/42` ready and
+`outcomes_inspected: false`. Run one family at a time:
+
+```bash
+python3 scripts/run_benefit_selective_external_queue.py --family chronos --download-missing
+python3 scripts/run_benefit_selective_external_queue.py --family moirai --download-missing
+python3 scripts/run_benefit_selective_external_queue.py --family timesfm --download-missing
+```
+
+Resume is automatic: an existing runner status with `status: ok` is skipped.
+After all 42 jobs finish, run the locked evaluation exactly once:
+
+```bash
+PYTHONPATH=src python3 scripts/evaluate_benefit_selective_external.py
+```
+
+Return all `results/raw_forecasts/external_v1_*` files, the external execution
+status/logs, and every generated
+`results/aaai_stress/benefit_selective_external_confirmation_*` artifact. The
+lead machine will ingest the committed artifacts without changing the policy.
+
+Detailed protocol and commands:
+
+- `docs/benefit_selective_external_confirmation_protocol.md`
+- `docs/benefit_selective_external_execution_pack.md`
+- `results/aaai_stress/benefit_selective_external_execution_jobs.csv`
+- `results/aaai_stress/benefit_selective_external_freeze_hashes.json`
+
+## Historical Task: q9 Rerun Handoff
 
 This repository is a remote-execution handoff for the remaining memory-bound
 q9/full-grid reruns in the DRCR/TSFM reliability study. The local 8GB machine is
@@ -6,7 +61,7 @@ the research lead and paper-integration environment; the remote/larger-memory
 machine is responsible for executing the frozen rerun queue and returning
 auditable artifacts.
 
-## Current Scope
+## Historical Scope
 
 - P0 sources: `17`
 - Forecast windows: `408`

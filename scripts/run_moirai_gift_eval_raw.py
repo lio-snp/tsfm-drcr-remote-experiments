@@ -239,6 +239,7 @@ def main() -> None:
             "drift",
             "linear_ar",
             "seasonal_naive",
+            "rolling_pre_origin",
         ],
     )
     parser.add_argument("--baseline-context-cap", type=int, default=None)
@@ -383,7 +384,7 @@ def main() -> None:
                 feat_dynamic_real_dim=0,
                 past_feat_dynamic_real_dim=0,
             ).to(args.device)
-            levels = [0.1, 0.5, 0.9]
+            levels = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
         else:
             module = Moirai2Module.from_pretrained(args.model_id)
             model = Moirai2Forecast(

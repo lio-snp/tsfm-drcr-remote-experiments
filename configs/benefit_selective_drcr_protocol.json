@@ -1,0 +1,70 @@
+{
+  "protocol_id": "benefit_selective_drcr_dev_v1",
+  "status": "development_only_test_previously_observed",
+  "default_action": "native_tsfm",
+  "repair_actions": [
+    "drcr_point",
+    "drcr_expert_pull_1.25_cap_1.10"
+  ],
+  "features": [
+    "autocorrelation_strength",
+    "changepoint_density",
+    "coefficient_of_variation",
+    "context_length",
+    "flatness_score",
+    "horizon",
+    "horizon_context_ratio",
+    "kurtosis_excess",
+    "missingness",
+    "seasonality_strength",
+    "spectral_entropy",
+    "spike_frequency",
+    "trend_strength",
+    "zero_ratio",
+    "native_width_ratio",
+    "smooth_width_score",
+    "family_is_timesfm"
+  ],
+  "forbidden_features": [
+    "dataset",
+    "domain",
+    "role",
+    "source",
+    "target_id",
+    "baseline_mae",
+    "baseline_mase",
+    "empirical_coverage_90",
+    "failure_delta_005",
+    "forecast_variance_ratio",
+    "mae",
+    "mase",
+    "relative_error_ratio",
+    "rmse",
+    "spike_recall"
+  ],
+  "cross_fit": {
+    "group": "source_configuration",
+    "folds": 5
+  },
+  "regressor": {
+    "class": "RandomForestRegressor",
+    "n_estimators": 300,
+    "min_samples_leaf_candidates": [5, 10, 20],
+    "random_state": 20260711
+  },
+  "benefit_lcb": {
+    "residual_quantile_candidates": [0.05, 0.1, 0.2, 0.3, 0.4],
+    "intervene_only_if_lcb_above": 0.0
+  },
+  "calibration_safety": {
+    "bootstrap_samples": 2000,
+    "one_sided_confidence": 0.9,
+    "complement_q9_wql_delta_ucb": 0.002,
+    "positive_control_q9_wql_delta_ucb": 0.002,
+    "complement_coverage_gap_delta_ucb": 0.02,
+    "positive_control_coverage_gap_delta_ucb": 0.02,
+    "complement_intervention_rate_cap": 0.25
+  },
+  "selection_rule": "Among candidates passing every calibration safety constraint and improving calibration failure-target q9-WQL, select the lowest failure-target q9-WQL, then the lowest complement intervention rate. If none pass, deploy Native.",
+  "external_confirmation_requirement": "Freeze one selected policy before evaluation on untouched whole-domain, disjoint-series, non-overlapping-origin data. This development endpoint cannot support the final claim."
+}

@@ -101,6 +101,7 @@ def main() -> None:
             "drift",
             "linear_ar",
             "seasonal_naive",
+            "rolling_pre_origin",
         ],
     )
     parser.add_argument("--baseline-context-cap", type=int, default=None)

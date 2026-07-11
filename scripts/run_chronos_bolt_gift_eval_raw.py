@@ -16,7 +16,12 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from low_snr_tsfm.baselines import all_simple_baselines
+from low_snr_tsfm.baselines import (
+    all_simple_baselines,
+    naive_forecast,
+    rolling_origin_select_baseline,
+    seasonal_naive_forecast,
+)
 from low_snr_tsfm.gift_eval_windowing import (
     finite_pair_mask,
     forward_fill_nan,
@@ -194,6 +199,36 @@ def auto_ets_forecast(context: np.ndarray, horizon: int, season_length: int) -> 
     return np.asarray(forecast["mean"], dtype=float)
 
 
+def rolling_pre_origin_forecast(
+    context: np.ndarray,
+    horizon: int,
+    season_length: int,
+    *,
+    n_folds: int = 3,
+) -> tuple[str, np.ndarray]:
+    validation_horizon = min(
+        int(horizon),
+        max(1, int(season_length)),
+        max(1, int(np.asarray(context).size // (n_folds + 2))),
+    )
+    forecasters = {
+        "naive": lambda values, length: naive_forecast(values, length),
+        f"seasonal_naive_{season_length}": lambda values, length: seasonal_naive_forecast(
+            values, length, season_length
+        ),
+        "auto_ets": lambda values, length: auto_ets_forecast(values, length, season_length),
+        "auto_arima": lambda values, length: auto_arima_forecast(values, length, season_length),
+    }
+    selected = rolling_origin_select_baseline(
+        context,
+        horizon,
+        forecasters,
+        validation_horizon=validation_horizon,
+        n_folds=n_folds,
+    )
+    return selected.name, selected.values
+
+
 def select_baseline(
     mode: str,
     context: np.ndarray,
@@ -215,6 +250,12 @@ def select_baseline(
         if not mask.any():
             raise ValueError("AutoETS produced no finite comparison points")
         return "auto_ets", values, mae(target[mask], values[mask])
+    if mode == "rolling_pre_origin":
+        name, values = rolling_pre_origin_forecast(context, horizon, season_length)
+        mask = finite_pair_mask(target, values)
+        if not mask.any():
+            raise ValueError("Rolling-selected baseline produced no finite comparison points")
+        return name, values, mae(target[mask], values[mask])
     named = {candidate.name: candidate.values for candidate in all_simple_baselines(
         context,
         horizon,
@@ -258,6 +299,7 @@ def main() -> None:
             "drift",
             "linear_ar",
             "seasonal_naive",
+            "rolling_pre_origin",
         ],
     )
     parser.add_argument("--baseline-context-cap", type=int, default=None)

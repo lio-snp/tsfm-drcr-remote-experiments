@@ -1,0 +1,67 @@
+{
+  "status": "pending_external_artifacts",
+  "protocol_id": "benefit_selective_drcr_external_v1",
+  "external_candidate_id": "benefit_lcb_leaf20_q40_noleak16",
+  "jobs_ready": 0,
+  "jobs_expected": 42,
+  "windows_ready": 0,
+  "windows_expected": 672,
+  "outcomes_inspected": false,
+  "detail": [
+    {
+      "job_id": "external_v1_chronos_m4_yearly_a_short",
+      "domain": "Econ/Fin",
+      "dataset": "m4_yearly/A/short",
+      "family": "chronos",
+      "ready": 0,
+      "windows_run": 0,
+      "raw_path": "",
+      "history_path": "",
+      "detail": "missing_or_non_ok_status"
+    },
+    {
+      "job_id": "external_v1_moirai_m4_yearly_a_short",
+      "domain": "Econ/Fin",
+      "dataset": "m4_yearly/A/short",
+      "family": "moirai",
+      "ready": 0,
+      "windows_run": 0,
+      "raw_path": "",
+      "history_path": "",
+      "detail": "missing_or_non_ok_status"
+    },
+    {
+      "job_id": "external_v1_timesfm_m4_yearly_a_short",
+      "domain": "Econ/Fin",
+      "dataset": "m4_yearly/A/short",
+      "family": "timesfm",
+      "ready": 0,
+      "windows_run": 0,
+      "raw_path": "",
+      "history_path": "",
+      "detail": "missing_or_non_ok_status"
+    },
+    {
+      "job_id": "external_v1_chronos_m4_monthly_m_short",
+      "domain": "Econ/Fin",
+      "dataset": "m4_monthly/M/short",
+      "family": "chronos",
+      "ready": 0,
+      "windows_run": 0,
+      "raw_path": "",
+      "history_path": "",
+      "detail": "missing_or_non_ok_status"
+    },
+    {
+      "job_id": "external_v1_moirai_m4_monthly_m_short",
+      "domain": "Econ/Fin",
+      "dataset": "m4_monthly/M/short",
+      "family": "moirai",
+      "ready": 0,
+      "windows_run": 0,
+      "raw_path": "",
+      "history_path": "",
+      "detail": "missing_or_non_ok_status"
+    }
+  ]
+}

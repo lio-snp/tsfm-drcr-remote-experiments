@@ -1,0 +1,160 @@
+{
+  "protocol_id": "benefit_selective_drcr_external_v1",
+  "frozen_at": "2026-07-11",
+  "execution_contract_frozen_at": "2026-07-12-before_external_outcomes",
+  "method": {
+    "development_candidate_id": "benefit_lcb_leaf20_q40",
+    "external_candidate_id": "benefit_lcb_leaf20_q40_noleak16",
+    "model_class": "RandomForestRegressor",
+    "min_samples_leaf": 20,
+    "n_estimators": 300,
+    "residual_quantile": 0.4,
+    "default_action": "native_tsfm",
+    "repair_actions": [
+      "drcr_point",
+      "drcr_expert_pull_1.25_cap_1.10"
+    ],
+    "features": [
+      "autocorrelation_strength",
+      "changepoint_density",
+      "coefficient_of_variation",
+      "context_length",
+      "horizon",
+      "horizon_context_ratio",
+      "kurtosis_excess",
+      "missingness",
+      "seasonality_strength",
+      "spectral_entropy",
+      "spike_frequency",
+      "trend_strength",
+      "zero_ratio",
+      "native_width_ratio",
+      "smooth_width_score",
+      "family_is_timesfm"
+    ],
+    "removed_development_features": {
+      "flatness_score": "removed before external outcomes because the historical implementation uses the realized target"
+    },
+    "regressor_random_state": 20260711,
+    "cross_fit_folds": 5,
+    "intervene_only_if_lcb_above": 0.0,
+    "base_cpr_policy": {
+      "kind": "local_structure_cpr",
+      "min_active": 2,
+      "weight": 0.60,
+      "factor_step": 0.50,
+      "max_weight": 1.00,
+      "conflict_threshold": 0.25,
+      "shield_cap": 0.125,
+      "degeneracy_hcr_threshold": 0.30,
+      "degeneracy_trend_threshold": 0.40
+    },
+    "smooth_interval_head": {
+      "low_scale": 0.906,
+      "high_scale": 1.00,
+      "native_width_ratio_threshold": 0.10,
+      "temperature": 0.05,
+      "structured_guard_hcr_threshold": 0.05,
+      "structured_guard_trend_threshold": 0.05,
+      "structured_scale": 2.00,
+      "structured_weight_cap": 0.125
+    },
+    "action_contract": {
+      "drcr_point": "base CPR center repair with native quantile deviations preserved at scale 1.0",
+      "drcr_expert_pull_1.25_cap_1.10": "base CPR weight multiplied by 1.25 and clipped to 1.0; smooth interval scale capped at 1.10"
+    },
+    "no_external_labels": true
+  },
+  "low_structure_taxonomy": {
+    "status": "frozen_before_external_outcomes",
+    "minimum_active_factors": 2,
+    "thresholds": {
+      "horizon_context_ratio": 0.10,
+      "seasonality_strength": 0.15,
+      "trend_strength": 0.10,
+      "severe_weak_seasonality": 0.075,
+      "spike_frequency": 0.022,
+      "changepoint_density": 0.08,
+      "zero_ratio": 0.10,
+      "coefficient_of_variation": 1.50,
+      "kurtosis_excess": 8.0,
+      "spectral_entropy": 0.85
+    },
+    "factors": {
+      "information_insufficiency": "horizon_context_ratio >= 0.10",
+      "weak_reusable_structure": "(seasonality_strength <= 0.15 and trend_strength <= 0.10) or (seasonality_strength <= 0.075 and spectral_entropy >= 0.85)",
+      "pathological_dynamics": "spike_frequency >= 0.022 or changepoint_density >= 0.08",
+      "sparse_count_behavior": "zero_ratio >= 0.10",
+      "noise_dominant_history": "coefficient_of_variation >= 1.50 or kurtosis_excess >= 8.0 or (spectral_entropy >= 0.85 and seasonality_strength <= 0.15)"
+    },
+    "outcome_based_denominator_fragility_excluded": true
+  },
+  "domain_sampling": {
+    "source_catalog": "results/failure_mining/gift_eval_second_family_failures.csv",
+    "selection_fields_only": ["dataset", "domain"],
+    "forbidden_selection_fields": [
+      "model_mase",
+      "model_wql",
+      "mase_relative_error_ratio",
+      "wql_relative_error_ratio",
+      "failure_delta_005"
+    ],
+    "exclude_development_datasets": [
+      "covid_deaths/D/short",
+      "loop_seattle/H/short",
+      "solar/10T/short",
+      "bizitobs_application/10S/short"
+    ],
+    "exclude_development_base_datasets": [
+      "covid_deaths",
+      "loop_seattle",
+      "solar",
+      "bizitobs_application"
+    ],
+    "catalog_provenance_caveat": "The source catalog contains historical aggregate outcomes, but the deterministic sampler reads only dataset and domain fields. This is outcome-blind algorithmic domain selection, not a claim that researchers never had access to catalog outcomes.",
+    "seed": "drcr-external-v1",
+    "rule": "Exclude every development base dataset, then select two SHA256-ranked datasets per broad domain with different base dataset prefixes."
+  },
+  "evaluation": {
+    "models": [
+      "chronos_bolt_small",
+      "moirai_1_1_small",
+      "timesfm_2_5"
+    ],
+    "quantiles": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+    "windows_per_model_domain": 16,
+    "series_per_model_domain": 16,
+    "windows_per_series": 1,
+    "context_cap": 512,
+    "classical_context_cap": 2048,
+    "classical_validation_folds": 3,
+    "moirai_samples": 100,
+    "forecast_origins": "non_overlapping_within_series",
+    "series_overlap_with_development": "forbidden",
+    "external_domain_labels_for_training": "forbidden",
+    "classical_reference_selection": "rolling_pre_origin_validation_among_naive_seasonal_naive_autoets_autoarima",
+    "execution_policy": "strictly_serial_one_model_process_per_job"
+  },
+  "co_primary_pass_criteria": {
+    "overall_domain_macro_q9_wql_delta_ci_upper": 0.0,
+    "low_structure_domain_macro_q9_wql_delta_ci_upper": 0.0,
+    "structured_complement_q9_wql_delta_ci_upper": 0.002,
+    "structured_complement_coverage_gap_delta_ci_upper": 0.02,
+    "structured_complement_intervention_rate": 0.25,
+    "must_outperform_always_repair": true,
+    "always_repair_baseline": "drcr_expert_pull_1.25_cap_1.10",
+    "must_outperform_fixed_blend": true,
+    "fixed_blend_weight": 0.50,
+    "must_outperform_matched_random_gate": true,
+    "baseline_superiority_q9_wql_delta_ci_upper": 0.0,
+    "leave_one_domain_out_direction_stable": true
+  },
+  "inference": {
+    "primary_unit": "data_domain",
+    "hierarchy": ["domain", "series", "forecast_origin"],
+    "confidence": 0.95,
+    "paired_hierarchical_bootstrap_samples": 5000,
+    "domain_level_sign_flip": true
+  },
+  "stop_rule": "Run once after artifact validation. Do not change features, actions, thresholds, domains, or pass criteria after any external forecast outcome is inspected."
+}
