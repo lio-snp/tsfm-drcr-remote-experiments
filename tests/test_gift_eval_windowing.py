@@ -16,8 +16,12 @@ class GiftEvalWindowingTests(unittest.TestCase):
     def test_prediction_length_matches_gift_eval_maps(self):
         self.assertEqual(canonical_freq_unit("10S"), "S")
         self.assertEqual(canonical_freq_unit("5min"), "T")
+        self.assertEqual(canonical_freq_unit("A-DEC"), "A")
+        self.assertEqual(canonical_freq_unit("W-THU"), "W")
         self.assertEqual(prediction_length("bizitobs_application", "10S", "short"), 60)
         self.assertEqual(prediction_length("m4_hourly", "H", "short"), 48)
+        self.assertEqual(prediction_length("m4_yearly", "A-DEC", "short"), 6)
+        self.assertEqual(prediction_length("ett1", "W-THU", "short"), 8)
 
     def test_window_count_uses_gift_eval_bounds(self):
         self.assertEqual(window_count(100, 60), 1)

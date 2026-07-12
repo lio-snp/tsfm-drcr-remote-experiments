@@ -50,20 +50,14 @@ def canonical_freq_unit(freq: str) -> str:
     """Return the GIFT-Eval frequency unit key used by prediction maps."""
 
     freq_str = str(freq).strip()
-    unit = re.sub(r"^[0-9]+", "", freq_str)
-    unit = {
-        "min": "T",
-        "h": "H",
-        "s": "S",
+    unit = re.sub(r"^[0-9]+", "", freq_str).upper().split("-", 1)[0]
+    return {
+        "MIN": "T",
         "YE": "A",
         "Y": "A",
         "QE": "Q",
         "ME": "M",
     }.get(unit, unit)
-    unit = unit.upper()
-    if unit == "MIN":
-        return "T"
-    return unit
 
 
 def prediction_length(dataset_name: str, freq: str, term: str) -> int:
