@@ -1,0 +1,2 @@
+baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
+rolling_pre_origin,temperature_rain_with_missing/D/short,0.0,0.125,1.6328037900103622,0.8604166666666667,0.702718164888043,timesfm_2_5,16,16,0.125,30,external_v1_timesfm_temperature_rain_d_short_1783927987

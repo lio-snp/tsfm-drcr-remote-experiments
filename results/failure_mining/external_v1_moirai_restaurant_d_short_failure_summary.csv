@@ -1,0 +1,2 @@
+baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
+rolling_pre_origin,restaurant/D/short,0.0,0.25,1.2467563406136193,0.7730615682294448,0.9359497808829718,moirai_1_1_small,16,16,0.25,30,external_v1_moirai_restaurant_d_short_1783887286

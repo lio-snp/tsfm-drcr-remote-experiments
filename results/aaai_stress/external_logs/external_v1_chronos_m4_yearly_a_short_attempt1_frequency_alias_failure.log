@@ -1,0 +1,11 @@
+$ 'E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Scripts\python.exe' scripts/run_chronos_bolt_gift_eval_raw.py --dataset-name m4_yearly --data-path 'data\gift-eval\m4_yearly' --term short --model-id amazon/chronos-bolt-small --model-name chronos_bolt_small --max-series 16 --max-windows 1 --context-cap 512 --baseline-mode rolling_pre_origin --baseline-context-cap 2048 --baseline-season-length 6 --domain Econ/Fin --regime external_locked --output-slug external_v1_chronos_m4_yearly_a_short --export-history-sidecar --quantile-levels 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9
+Traceback (most recent call last):
+  File "E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\scripts\run_chronos_bolt_gift_eval_raw.py", line 639, in <module>
+    main()
+  File "E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\scripts\run_chronos_bolt_gift_eval_raw.py", line 364, in main
+    horizon = prediction_length(args.dataset_name, freq, args.term)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\src\low_snr_tsfm\gift_eval_windowing.py", line 72, in prediction_length
+    base = M4_PRED_LENGTH_MAP[unit] if "m4" in dataset_name else PRED_LENGTH_MAP[unit]
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'A-DEC'

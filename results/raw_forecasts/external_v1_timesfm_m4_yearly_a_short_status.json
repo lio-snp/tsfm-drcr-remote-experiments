@@ -1,0 +1,9 @@
+{
+  "status": "blocked_no_rows",
+  "timestamp": 1783927778,
+  "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\data\\gift-eval\\m4_yearly",
+  "model_id": "google/timesfm-2.5-200m-pytorch",
+  "window_manifest": null,
+  "manifest_requested_windows": null,
+  "manifest_matched_windows": null
+}

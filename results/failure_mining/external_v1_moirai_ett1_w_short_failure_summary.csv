@@ -1,0 +1,2 @@
+baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
+rolling_pre_origin,ett1/W-THU/short,0.0,0.42857142857142855,1.1728403266359175,0.7857142857142857,0.9929389362371558,moirai_1_1_small,7,7,0.2857142857142857,8,external_v1_moirai_ett1_w_short_1783883107

@@ -1,0 +1,2 @@
+baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
+rolling_pre_origin,bizitobs_l2c/5T/medium,0.0,0.7142857142857143,4.96490492628153,0.40982142857142856,1.6974453373980956,timesfm_2_5,7,7,0.7142857142857143,480,external_v1_timesfm_bizitobs_l2c_5t_medium_1783932399

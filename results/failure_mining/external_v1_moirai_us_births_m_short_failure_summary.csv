@@ -1,0 +1,2 @@
+baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
+rolling_pre_origin,us_births/M/short,0.0,1.0,2.318332709654022,0.9166666666666666,2.318332709654022,moirai_1_1_small,1,1,1.0,12,external_v1_moirai_us_births_m_short_1783883185

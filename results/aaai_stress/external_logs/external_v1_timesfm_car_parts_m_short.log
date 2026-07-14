@@ -1,0 +1,12 @@
+$ 'E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Scripts\python.exe' scripts/run_timesfm_gift_eval_raw.py --dataset-name car_parts_with_missing --data-path 'data\gift-eval\car_parts_with_missing' --term short --model-id google/timesfm-2.5-200m-pytorch --model-name timesfm_2_5 --max-series 16 --max-windows 1 --context-cap 512 --baseline-mode rolling_pre_origin --baseline-context-cap 2048 --baseline-season-length 12 --domain Sales --regime external_locked --output-slug external_v1_timesfm_car_parts_m_short --export-history-sidecar
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+Traceback (most recent call last):
+  File "E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\scripts\run_timesfm_gift_eval_raw.py", line 467, in <module>
+    main()
+  File "E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\scripts\run_timesfm_gift_eval_raw.py", line 279, in main
+    baseline_name, baseline_values, baseline_mae = select_baseline(
+                                                   ^^^^^^^^^^^^^^^^
+  File "E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\scripts\run_chronos_bolt_gift_eval_raw.py", line 257, in select_baseline
+    raise ValueError("Rolling-selected baseline produced no finite comparison points")
+ValueError: Rolling-selected baseline produced no finite comparison points

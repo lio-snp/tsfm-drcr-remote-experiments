@@ -1,0 +1,10 @@
+$ 'E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Scripts\python.exe' scripts/run_timesfm_gift_eval_raw.py --dataset-name us_births --data-path 'data\gift-eval\us_births\M' --term short --model-id google/timesfm-2.5-200m-pytorch --model-name timesfm_2_5 --max-series 16 --max-windows 1 --context-cap 512 --baseline-mode rolling_pre_origin --baseline-context-cap 2048 --baseline-season-length 12 --domain Healthcare --regime external_locked --output-slug external_v1_timesfm_us_births_m_short --export-history-sidecar
+{
+  "status": "blocked_no_rows",
+  "timestamp": 1783975980,
+  "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\data\\gift-eval\\us_births\\M",
+  "model_id": "google/timesfm-2.5-200m-pytorch",
+  "window_manifest": null,
+  "manifest_requested_windows": null,
+  "manifest_matched_windows": null
+}

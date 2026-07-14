@@ -1,0 +1,10 @@
+$ 'E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Scripts\python.exe' scripts/run_timesfm_gift_eval_raw.py --dataset-name ett1 --data-path 'data\gift-eval\ett1\W' --term short --model-id google/timesfm-2.5-200m-pytorch --model-name timesfm_2_5 --max-series 16 --max-windows 1 --context-cap 512 --baseline-mode rolling_pre_origin --baseline-context-cap 2048 --baseline-season-length 8 --domain Energy --regime external_locked --output-slug external_v1_timesfm_ett1_w_short --export-history-sidecar
+{
+  "status": "blocked_no_rows",
+  "timestamp": 1783975916,
+  "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\data\\gift-eval\\ett1\\W",
+  "model_id": "google/timesfm-2.5-200m-pytorch",
+  "window_manifest": null,
+  "manifest_requested_windows": null,
+  "manifest_matched_windows": null
+}

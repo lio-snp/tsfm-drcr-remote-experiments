@@ -1,0 +1,19 @@
+{
+  "status": "blocked_runtime_error",
+  "timestamp": 1783888386,
+  "stage": "baseline",
+  "error_type": "ValueError",
+  "error": "Rolling-selected baseline produced no finite comparison points",
+  "model_id": "Salesforce/moirai-1.1-R-small",
+  "dataset_name": "car_parts_with_missing",
+  "term": "short",
+  "context_cap": 512,
+  "max_series": 16,
+  "max_windows": 1,
+  "device": "cpu",
+  "model_family": "moirai1",
+  "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\data\\gift-eval\\car_parts_with_missing",
+  "series_id": "T1",
+  "window_index": 0,
+  "baseline_mode": "rolling_pre_origin"
+}

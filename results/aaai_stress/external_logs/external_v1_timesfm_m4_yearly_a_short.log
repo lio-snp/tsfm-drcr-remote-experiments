@@ -1,0 +1,64 @@
+$ 'E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Scripts\python.exe' scripts/run_timesfm_gift_eval_raw.py --dataset-name m4_yearly --data-path 'data\gift-eval\m4_yearly' --term short --model-id google/timesfm-2.5-200m-pytorch --model-name timesfm_2_5 --max-series 16 --max-windows 1 --context-cap 512 --baseline-mode rolling_pre_origin --baseline-context-cap 2048 --baseline-season-length 6 --domain Econ/Fin --regime external_locked --output-slug external_v1_timesfm_m4_yearly_a_short --export-history-sidecar
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\statsforecast\ets.py:653: RuntimeWarning: divide by zero encountered in scalar divide
+  sigma2 = np.sum(e**2) / (ny - np_ - 1)
+{
+  "status": "blocked_no_rows",
+  "timestamp": 1783927778,
+  "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\data\\gift-eval\\m4_yearly",
+  "model_id": "google/timesfm-2.5-200m-pytorch",
+  "window_manifest": null,
+  "manifest_requested_windows": null,
+  "manifest_matched_windows": null
+}

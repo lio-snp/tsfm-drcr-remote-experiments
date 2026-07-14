@@ -1,0 +1,2 @@
+baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
+rolling_pre_origin,hospital/M/short,0.0,0.375,1.1812354715095532,0.765625,0.956459347556342,moirai_1_1_small,16,16,0.375,12,external_v1_moirai_hospital_m_short_1783883140

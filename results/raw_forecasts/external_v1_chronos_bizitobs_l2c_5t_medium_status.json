@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "timestamp": 1783875246,
+  "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\data\\gift-eval\\bizitobs_l2c\\5T",
+  "dataset": "bizitobs_l2c/5T/medium",
+  "model_id": "amazon/chronos-bolt-small",
+  "prediction_length": 480,
+  "gift_eval_windows": 7,
+  "windows_run": 7,
+  "series_run": 7,
+  "baseline_mode": "rolling_pre_origin",
+  "baseline_season_length": 48,
+  "baseline_context_cap": 2048,
+  "quantile_levels": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "window_manifest": null,
+  "manifest_requested_windows": null,
+  "manifest_matched_windows": null,
+  "raw_forecasts": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\raw_forecasts\\external_v1_chronos_bizitobs_l2c_5t_medium.csv",
+  "history_context_sidecar": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\raw_forecasts\\external_v1_chronos_bizitobs_l2c_5t_medium_history_context.csv",
+  "window_metrics": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\window_metrics\\external_v1_chronos_bizitobs_l2c_5t_medium_metrics.csv",
+  "failure_mining": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\failure_mining\\external_v1_chronos_bizitobs_l2c_5t_medium_window_failures.csv",
+  "failure_summary": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\failure_mining\\external_v1_chronos_bizitobs_l2c_5t_medium_failure_summary.csv",
+  "limitations": [
+    "limited-series CPU rerun",
+    "local simple baseline comparator",
+    "context capped for local runtime"
+  ]
+}
