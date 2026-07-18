@@ -1,5 +1,44 @@
 # TSFM DRCR Remote Experiment Handoff
 
+## Current Recovery State: E-GAP-000R
+
+The first external execution returned useful but incomplete artifacts. The lead
+machine has now reconciled the frozen endpoint by `output_slug`:
+
+- 42 frozen jobs / 672 requested windows;
+- 19 runner-complete jobs;
+- 10 exact-contract jobs;
+- 9 outcome-valid jobs;
+- 8 balanced exploratory jobs / 128 windows;
+- 33 jobs require frozen execution recovery.
+
+The authoritative recovery inputs are:
+
+- `results/aaai_stress/benefit_selective_external_endpoint_reconciliation.csv`
+- `results/aaai_stress/benefit_selective_external_endpoint_reconciliation_summary.json`
+- `results/aaai_stress/benefit_selective_external_recovery_jobs.csv`
+- `REMOTE_CODEX_PROMPT_E_GAP_000R.md`
+
+Build and verify the 33-job recovery queue:
+
+```bash
+python3 scripts/build_benefit_selective_external_recovery_manifest.py
+python3 tests/test_benefit_selective_external_recovery.py
+python3 scripts/run_benefit_selective_external_recovery.py --dry-run
+```
+
+Then execute family by family. The wrapper forces invalid runner-complete jobs
+to rerun and continues after individual failures:
+
+```bash
+python3 scripts/run_benefit_selective_external_recovery.py --family chronos --timeout-seconds 28800
+python3 scripts/run_benefit_selective_external_recovery.py --family moirai --timeout-seconds 28800
+python3 scripts/run_benefit_selective_external_recovery.py --family timesfm --timeout-seconds 28800
+```
+
+Do not modify any hash-locked scientific file. See
+`REMOTE_CODEX_PROMPT_E_GAP_000R.md` for the complete remote-agent contract.
+
 ## Current Locked Task: External Benefit-Selective DRCR Confirmation
 
 The earlier 17-source q9 refresh is complete. The active task is now the frozen
