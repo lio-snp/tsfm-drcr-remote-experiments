@@ -1,0 +1,2 @@
+job_id,family,category,queue_exit_code,artifact_status,status_path
+external_v1_moirai_bizitobs_l2c_5t_medium,moirai,runner_complete_contract_mismatch,0,ok,results/raw_forecasts/external_v1_moirai_bizitobs_l2c_5t_medium_status.json

@@ -1,0 +1,3 @@
+[1/1] E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Scripts\python.exe E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\scripts\run_benefit_selective_external_queue.py --job-id external_v1_moirai_bizitobs_l2c_5t_medium --download-missing --force --timeout-seconds 28800
+external_v1_moirai_bizitobs_l2c_5t_medium: ok (2806s)
+{'attempted': 1, 'planned': 0, 'artifact_status_ok': 1, 'status': 'E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\aaai_stress\\benefit_selective_external_recovery_status.csv'}

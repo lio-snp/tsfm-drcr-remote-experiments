@@ -1,0 +1,35 @@
+{
+  "status": "ok",
+  "timestamp": 1784657547,
+  "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\data\\gift-eval\\kdd_cup_2018_with_missing\\H",
+  "dataset": "kdd_cup_2018_with_missing/H/medium",
+  "model_id": "google/timesfm-2.5-200m-pytorch",
+  "prediction_length": 480,
+  "gift_eval_windows": 2,
+  "windows_run": 16,
+  "series_run": 16,
+  "quantile_levels": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "window_manifest": null,
+  "manifest_requested_windows": null,
+  "manifest_matched_windows": null,
+  "raw_forecasts": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\raw_forecasts\\external_v1_timesfm_kdd_cup_2018_h_medium.csv",
+  "history_context_sidecar": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\raw_forecasts\\external_v1_timesfm_kdd_cup_2018_h_medium_history_context.csv",
+  "window_metrics": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\window_metrics\\external_v1_timesfm_kdd_cup_2018_h_medium_metrics.csv",
+  "failure_mining": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\failure_mining\\external_v1_timesfm_kdd_cup_2018_h_medium_window_failures.csv",
+  "failure_summary": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\failure_mining\\external_v1_timesfm_kdd_cup_2018_h_medium_failure_summary.csv",
+  "limitations": [
+    "limited-series CPU rerun",
+    "TimesFM local memory-gated path"
+  ]
+}

@@ -1,0 +1,2 @@
+baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
+rolling_pre_origin,bitbrains_fast_storage/5T/short,0.0,0.125,1.0793244660646988,0.8463541666666666,0.789697067522598,timesfm_2_5,16,16,0.125,48,external_v1_timesfm_bitbrains_fast_storage_5t_short_1784706950

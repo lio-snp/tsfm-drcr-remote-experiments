@@ -1,6 +1,6 @@
 {
   "status": "blocked_runtime_error",
-  "timestamp": 1783888386,
+  "timestamp": 1784567084,
   "stage": "baseline",
   "error_type": "ValueError",
   "error": "Rolling-selected baseline produced no finite comparison points",

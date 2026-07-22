@@ -1,2 +1,40 @@
 $ 'E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Scripts\python.exe' scripts/run_chronos_bolt_gift_eval_raw.py --dataset-name bitbrains_fast_storage --data-path 'data\gift-eval\bitbrains_fast_storage\5T' --term short --model-id amazon/chronos-bolt-small --model-name chronos_bolt_small --max-series 16 --max-windows 1 --context-cap 512 --baseline-mode rolling_pre_origin --baseline-context-cap 2048 --baseline-season-length 48 --domain Web/CloudOps --regime external_locked --output-slug external_v1_chronos_bitbrains_fast_storage_5t_short --export-history-sidecar --quantile-levels 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9
-Loading weights:   0%|          | 0/143 [00:00<?, ?it/s]Loading weights: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 143/143 [00:00<00:00, 5982.60it/s]
+Loading weights:   0%|          | 0/143 [00:00<?, ?it/s]Loading weights: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 143/143 [00:00<00:00, 9422.14it/s]
+{
+  "status": "ok",
+  "timestamp": 1784517962,
+  "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\data\\gift-eval\\bitbrains_fast_storage\\5T",
+  "dataset": "bitbrains_fast_storage/5T/short",
+  "model_id": "amazon/chronos-bolt-small",
+  "prediction_length": 48,
+  "gift_eval_windows": 18,
+  "windows_run": 16,
+  "series_run": 16,
+  "baseline_mode": "rolling_pre_origin",
+  "baseline_season_length": 48,
+  "baseline_context_cap": 2048,
+  "quantile_levels": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "window_manifest": null,
+  "manifest_requested_windows": null,
+  "manifest_matched_windows": null,
+  "raw_forecasts": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\raw_forecasts\\external_v1_chronos_bitbrains_fast_storage_5t_short.csv",
+  "history_context_sidecar": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\raw_forecasts\\external_v1_chronos_bitbrains_fast_storage_5t_short_history_context.csv",
+  "window_metrics": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\window_metrics\\external_v1_chronos_bitbrains_fast_storage_5t_short_metrics.csv",
+  "failure_mining": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\failure_mining\\external_v1_chronos_bitbrains_fast_storage_5t_short_window_failures.csv",
+  "failure_summary": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\failure_mining\\external_v1_chronos_bitbrains_fast_storage_5t_short_failure_summary.csv",
+  "limitations": [
+    "limited-series CPU rerun",
+    "local simple baseline comparator",
+    "context capped for local runtime"
+  ]
+}

@@ -1,0 +1,2 @@
+baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
+rolling_pre_origin,kdd_cup_2018_with_missing/H/medium,0.0,0.375,1.3133190609996215,0.8195143720649172,0.9015564012536503,timesfm_2_5,16,16,0.375,480,external_v1_timesfm_kdd_cup_2018_h_medium_1784637739

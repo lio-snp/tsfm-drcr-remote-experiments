@@ -1,7 +1,7 @@
 $ 'E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-moirai\Scripts\python.exe' scripts/run_moirai_gift_eval_raw.py --dataset-name us_births --data-path 'data\gift-eval\us_births\M' --term short --model-id Salesforce/moirai-1.1-R-small --model-name moirai_1_1_small --max-series 16 --max-windows 1 --context-cap 512 --baseline-mode rolling_pre_origin --baseline-context-cap 2048 --baseline-season-length 12 --domain Healthcare --regime external_locked --output-slug external_v1_moirai_us_births_m_short --export-history-sidecar --model-family moirai1 --num-samples 100 --seed 7
 {
   "status": "ok",
-  "timestamp": 1783883191,
+  "timestamp": 1784542381,
   "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\data\\gift-eval\\us_births\\M",
   "dataset": "us_births/M/short",
   "model_id": "Salesforce/moirai-1.1-R-small",

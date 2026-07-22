@@ -1,2 +1,2 @@
 baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
-rolling_pre_origin,m4_monthly/M/short,0.0,0.25,3.334548386011264,0.9375,0.9059056592446605,timesfm_2_5,16,8,0.0,18,external_v1_timesfm_m4_monthly_m_short_1783975332
+rolling_pre_origin,m4_monthly/M/short,0.0,0.25,3.3345525572469623,0.9375,0.9059061744054139,timesfm_2_5,16,8,0.0,18,external_v1_timesfm_m4_monthly_m_short_1784618094

@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "timestamp": 1783935630,
+  "timestamp": 1784706925,
   "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\data\\gift-eval\\bizitobs_l2c\\5T",
   "dataset": "bizitobs_l2c/5T/medium",
   "model_id": "google/timesfm-2.5-200m-pytorch",

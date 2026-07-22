@@ -1,7 +1,7 @@
 $ 'E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-moirai\Scripts\python.exe' scripts/run_moirai_gift_eval_raw.py --dataset-name ett1 --data-path 'data\gift-eval\ett1\W' --term short --model-id Salesforce/moirai-1.1-R-small --model-name moirai_1_1_small --max-series 16 --max-windows 1 --context-cap 512 --baseline-mode rolling_pre_origin --baseline-context-cap 2048 --baseline-season-length 8 --domain Energy --regime external_locked --output-slug external_v1_moirai_ett1_w_short --export-history-sidecar --model-family moirai1 --num-samples 100 --seed 7
 {
   "status": "ok",
-  "timestamp": 1783883122,
+  "timestamp": 1784518073,
   "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\data\\gift-eval\\ett1\\W",
   "dataset": "ett1/W-THU/short",
   "model_id": "Salesforce/moirai-1.1-R-small",

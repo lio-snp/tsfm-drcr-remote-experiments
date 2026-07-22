@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "timestamp": 1783975886,
+  "timestamp": 1784618562,
   "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\data\\gift-eval\\m4_monthly",
   "dataset": "m4_monthly/M/short",
   "model_id": "google/timesfm-2.5-200m-pytorch",

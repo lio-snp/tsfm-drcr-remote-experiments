@@ -1,8 +1,8 @@
 $ 'E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Scripts\python.exe' scripts/run_chronos_bolt_gift_eval_raw.py --dataset-name temperature_rain_with_missing --data-path 'data\gift-eval\temperature_rain_with_missing' --term short --model-id amazon/chronos-bolt-small --model-name chronos_bolt_small --max-series 16 --max-windows 1 --context-cap 512 --baseline-mode rolling_pre_origin --baseline-context-cap 2048 --baseline-season-length 30 --domain Nature --regime external_locked --output-slug external_v1_chronos_temperature_rain_d_short --export-history-sidecar --quantile-levels 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9
-Loading weights:   0%|          | 0/143 [00:00<?, ?it/s]Loading weights: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 143/143 [00:00<00:00, 2150.74it/s]
+Loading weights:   0%|          | 0/143 [00:00<?, ?it/s]Loading weights: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 143/143 [00:00<00:00, 7505.95it/s]
 {
   "status": "ok",
-  "timestamp": 1783856149,
+  "timestamp": 1784453371,
   "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\data\\gift-eval\\temperature_rain_with_missing",
   "dataset": "temperature_rain_with_missing/D/short",
   "model_id": "amazon/chronos-bolt-small",

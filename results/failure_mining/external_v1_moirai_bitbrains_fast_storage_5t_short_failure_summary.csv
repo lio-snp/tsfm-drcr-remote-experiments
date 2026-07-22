@@ -1,0 +1,2 @@
+baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
+rolling_pre_origin,bitbrains_fast_storage/5T/short,0.0,0.25,1.1460327304940776,0.9348958333333334,0.7579482014979757,moirai_1_1_small,16,16,0.125,48,external_v1_moirai_bitbrains_fast_storage_5t_short_1784607963

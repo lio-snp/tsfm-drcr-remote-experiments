@@ -2,9 +2,9 @@
   "status": "pending_external_artifacts",
   "protocol_id": "benefit_selective_drcr_external_v1",
   "external_candidate_id": "benefit_lcb_leaf20_q40_noleak16",
-  "jobs_ready": 10,
+  "jobs_ready": 20,
   "jobs_expected": 42,
-  "windows_ready": 160,
+  "windows_ready": 320,
   "windows_expected": 672,
   "outcomes_inspected": false,
   "detail": [

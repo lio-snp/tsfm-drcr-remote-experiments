@@ -1,0 +1,2 @@
+job_id,family,category,queue_exit_code,artifact_status,status_path
+external_v1_moirai_car_parts_m_short,moirai,baseline_infeasible,0,blocked_runtime_error,results/raw_forecasts/external_v1_moirai_car_parts_m_short_status.json

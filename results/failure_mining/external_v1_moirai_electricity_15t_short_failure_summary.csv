@@ -1,0 +1,2 @@
+baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
+rolling_pre_origin,electricity/15T/short,0.0,0.125,1.267376341199828,0.7994791666666666,0.7393441403377363,moirai_1_1_small,16,16,0.0625,48,external_v1_moirai_electricity_15t_short_1784518102

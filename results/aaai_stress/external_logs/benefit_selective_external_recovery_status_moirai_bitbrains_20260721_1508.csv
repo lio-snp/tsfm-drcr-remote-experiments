@@ -1,0 +1,2 @@
+job_id,family,category,queue_exit_code,artifact_status,status_path
+external_v1_moirai_bitbrains_fast_storage_5t_short,moirai,timeout,0,ok,results/raw_forecasts/external_v1_moirai_bitbrains_fast_storage_5t_short_status.json

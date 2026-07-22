@@ -1,1 +1,38 @@
 $ 'E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Scripts\python.exe' scripts/run_timesfm_gift_eval_raw.py --dataset-name bitbrains_fast_storage --data-path 'data\gift-eval\bitbrains_fast_storage\5T' --term short --model-id google/timesfm-2.5-200m-pytorch --model-name timesfm_2_5 --max-series 16 --max-windows 1 --context-cap 512 --baseline-mode rolling_pre_origin --baseline-context-cap 2048 --baseline-season-length 48 --domain Web/CloudOps --regime external_locked --output-slug external_v1_timesfm_bitbrains_fast_storage_5t_short --export-history-sidecar
+E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-chronos\Lib\site-packages\timesfm\torch\transformer.py:146: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:555.)
+  output = F.scaled_dot_product_attention(query, key, value, attn_mask=mask, scale=1.0)
+{
+  "status": "ok",
+  "timestamp": 1784717135,
+  "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\data\\gift-eval\\bitbrains_fast_storage\\5T",
+  "dataset": "bitbrains_fast_storage/5T/short",
+  "model_id": "google/timesfm-2.5-200m-pytorch",
+  "prediction_length": 48,
+  "gift_eval_windows": 18,
+  "windows_run": 16,
+  "series_run": 16,
+  "quantile_levels": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "window_manifest": null,
+  "manifest_requested_windows": null,
+  "manifest_matched_windows": null,
+  "raw_forecasts": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\raw_forecasts\\external_v1_timesfm_bitbrains_fast_storage_5t_short.csv",
+  "history_context_sidecar": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\raw_forecasts\\external_v1_timesfm_bitbrains_fast_storage_5t_short_history_context.csv",
+  "window_metrics": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\window_metrics\\external_v1_timesfm_bitbrains_fast_storage_5t_short_metrics.csv",
+  "failure_mining": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\failure_mining\\external_v1_timesfm_bitbrains_fast_storage_5t_short_window_failures.csv",
+  "failure_summary": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\results\\failure_mining\\external_v1_timesfm_bitbrains_fast_storage_5t_short_failure_summary.csv",
+  "limitations": [
+    "limited-series CPU rerun",
+    "TimesFM local memory-gated path"
+  ]
+}

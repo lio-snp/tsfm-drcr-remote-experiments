@@ -1,7 +1,7 @@
 $ 'E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-moirai\Scripts\python.exe' scripts/run_moirai_gift_eval_raw.py --dataset-name bizitobs_l2c --data-path 'data\gift-eval\bizitobs_l2c\5T' --term medium --model-id Salesforce/moirai-1.1-R-small --model-name moirai_1_1_small --max-series 16 --max-windows 1 --context-cap 512 --baseline-mode rolling_pre_origin --baseline-context-cap 2048 --baseline-season-length 48 --domain Web/CloudOps --regime external_locked --output-slug external_v1_moirai_bizitobs_l2c_5t_medium --export-history-sidecar --model-family moirai1 --num-samples 100 --seed 7
 {
   "status": "ok",
-  "timestamp": 1783920454,
+  "timestamp": 1784607902,
   "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\data\\gift-eval\\bizitobs_l2c\\5T",
   "dataset": "bizitobs_l2c/5T/medium",
   "model_id": "Salesforce/moirai-1.1-R-small",

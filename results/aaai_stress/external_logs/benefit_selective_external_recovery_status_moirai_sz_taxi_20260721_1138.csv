@@ -1,0 +1,2 @@
+job_id,family,category,queue_exit_code,artifact_status,status_path
+external_v1_moirai_sz_taxi_15t_short,moirai,timeout,0,ok,results/raw_forecasts/external_v1_moirai_sz_taxi_15t_short_status.json

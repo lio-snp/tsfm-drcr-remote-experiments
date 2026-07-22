@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "timestamp": 1783932370,
+  "timestamp": 1784661937,
   "dataset_dir": "E:\\DRCR-helper\\tsfm-drcr-remote-experiments-win-exec\\data\\gift-eval\\temperature_rain_with_missing",
   "dataset": "temperature_rain_with_missing/D/short",
   "model_id": "google/timesfm-2.5-200m-pytorch",

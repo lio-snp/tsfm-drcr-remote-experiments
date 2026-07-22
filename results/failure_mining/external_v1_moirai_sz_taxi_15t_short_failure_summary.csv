@@ -1,0 +1,2 @@
+baseline_mode,dataset,excess_variance_rate,failure_rate_delta_005,max_relative_error_ratio,mean_empirical_coverage_90,mean_relative_error_ratio,model,n_series,n_windows,over_smoothing_rate,prediction_length,run_id
+rolling_pre_origin,sz_taxi/15T/short,0.0,0.1875,1.114864230570757,0.796875,0.9570515936090492,moirai_1_1_small,16,16,0.1875,48,external_v1_moirai_sz_taxi_15t_short_1784589967

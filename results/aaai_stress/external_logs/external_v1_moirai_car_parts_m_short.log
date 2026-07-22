@@ -3,7 +3,7 @@ E:\DRCR-helper\tsfm-drcr-remote-experiments-win-exec\.venv-moirai\Lib\site-packa
   sigma2 = np.sum(e**2) / (ny - np_ - 1)
 {
   "status": "blocked_runtime_error",
-  "timestamp": 1783888386,
+  "timestamp": 1784567084,
   "stage": "baseline",
   "error_type": "ValueError",
   "error": "Rolling-selected baseline produced no finite comparison points",
